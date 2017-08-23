@@ -18,6 +18,7 @@ class SVGWriter
     public function __construct()
     {
         $this->outString = '<?xml version="1.0" encoding="utf-8"?>';
+        $this->outString .= PHP_EOL;
     }
 
     /**
@@ -42,8 +43,9 @@ class SVGWriter
      *
      * @return void
      */
-    public function writeNode(SVGNode $node)
+    public function writeNode(SVGNode $node, $indent = "")
     {
+        $this->outString .= $indent;
         $this->outString .= '<'.$node->getName();
 
         $this->appendAttributes($node->getSerializableAttributes());
@@ -51,21 +53,26 @@ class SVGWriter
 
         if (!($node instanceof SVGNodeContainer) && !($node instanceof SVGStyle)) {
             $this->outString .= ' />';
+            $this->outString .= PHP_EOL;
             return;
         }
 
-        $this->outString .= '>';
+        $this->outString .= '>'.PHP_EOL;
         if ($node instanceof SVGStyle) {
             $this->writeCdata($node->getCss());
+            $this->outString .= $indent;
             $this->outString .= '</'.$node->getName().'>';
+            $this->outString .= PHP_EOL;
 
             return;
         }
 
         for ($i = 0, $n = $node->countChildren(); $i < $n; ++$i) {
-            $this->writeNode($node->getChild($i));
+            $this->writeNode($node->getChild($i), $indent."  ");
         }
+        $this->outString .= $indent;
         $this->outString .= '</'.$node->getName().'>';
+        $this->outString .= PHP_EOL;
     }
 
     /**
