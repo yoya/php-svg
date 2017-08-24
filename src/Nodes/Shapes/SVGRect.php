@@ -111,7 +111,7 @@ class SVGRect extends SVGNode
 
 
     /**
-     * @return string The rx coordinate of the upper left corner.
+     * @return string The x radius of the corners.
      */
     public function getRX()
     {
@@ -119,7 +119,7 @@ class SVGRect extends SVGNode
     }
 
     /**
-     * Sets the rx coordinate of the upper left corner.
+     * Sets the x radius of the corners.
      *
      * @param string $rx The new coordinate.
      *
@@ -131,7 +131,7 @@ class SVGRect extends SVGNode
     }
 
     /**
-     * @return string The ry coordinate of the upper left corner.
+     * @return string The y radius of the corners.
      */
     public function getRY()
     {
@@ -139,7 +139,7 @@ class SVGRect extends SVGNode
     }
 
     /**
-     * Sets the ry coordinate of the upper left corner.
+     * Sets the y radius of the corners.
      *
      * @param string $ry The new coordinate.
      *
