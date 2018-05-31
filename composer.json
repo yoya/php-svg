@@ -2,7 +2,7 @@
     "name": "yoya/php-svg",
     "homepage": "http://pwiki.awm.jp/~yoya/?php-svg",
     "type": "library",
-    "description": "Read, edit, write, and render SVG files with PHP",
+    "description": "Read, edit, write, and render SVG files with PHP (yoya's customize)",
     "keywords": ["svg"],
     "license": "MIT",
     "authors": [
