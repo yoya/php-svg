@@ -1,6 +1,6 @@
 {
-    "name": "meyfa/php-svg",
-    "homepage": "https://github.com/meyfa/php-svg",
+    "name": "yoya/php-svg",
+    "homepage": "http://pwiki.awm.jp/~yoya/?php-svg",
     "type": "library",
     "description": "Read, edit, write, and render SVG files with PHP",
     "keywords": ["svg"],
@@ -9,6 +9,10 @@
         {
             "name": "Fabian Meyer",
             "homepage": "http://meyfa.net"
+        },
+        {
+            "name": "Yoshihiro Yamazaki",
+            "homepage": "http://pwiki.awm.jp/~yoya/"
         }
     ],
     "require": {
